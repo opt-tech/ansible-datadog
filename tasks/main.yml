@@ -15,7 +15,7 @@
 
 # DEPRECATED: Remove specific handling of the process check for next major release
 - template: src=process.yaml.j2 dest=/etc/dd-agent/conf.d/process.yaml
-  when: datadog_process_checks is defined
+  when: datadog_checks.process is defined
   notify: restart datadog
 
 - debug: 'msg="[DEPRECATION NOTICE] Using `datadog_process_checks` is deprecated, use `process` under `datadog_checks` instead"'
