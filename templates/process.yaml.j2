@@ -2,7 +2,7 @@
 init_config:
 
 instances:
-{% for process in datadog_checks.process %}
+{% for process in datadog_checks.process.instances %}
 - name: {{ process.name }}
   search_string: {{ process.search_string }}
   {% if process.exact_match is defined -%}
